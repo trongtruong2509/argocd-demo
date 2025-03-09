@@ -3,7 +3,7 @@ cluster_name: minikube
 
 apps:
   minio-app: true
-  my-nginx-app: false
+  my-nginx-app: true
   
 
 my_nginx_app:
