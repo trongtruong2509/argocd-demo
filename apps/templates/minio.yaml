@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://charts.min.io/  # MinIO official Helm repo
     chart: minio
-    targetRevision: "{{ .Values.version }}"  # Check for the latest version on Artifact Hub
+    targetRevision: "15.0.5"  # Check for the latest version on Artifact Hub
     helm:
       value: | 
         namespace: minio
