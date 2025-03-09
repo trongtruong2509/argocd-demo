@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/trongtruong2509/argocd-demo.git
-    targetRevision: approach_1
+    targetRevision: HEAD
     path: "./apps/"  # The folder containing child applications
     helm:
       valueFiles:
