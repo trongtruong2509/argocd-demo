@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: minikube
+  namespace: argocd-app
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/trongtruong2509/argocd-demo.git
+    targetRevision: main
+    path: "./apps/"  # The folder containing child applications
+  helm:
+    valueFiles:
+      - "./clusters/minikube/cluster-config.yaml"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd-app
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

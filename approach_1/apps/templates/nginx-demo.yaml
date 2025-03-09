@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-nginx-app
+  namespace: argocd-app
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/trongtruong2509/argocd-demo.git
+    targetRevision: main
+    path: "helm-charts/nginx-demo"
+  helm:
+    valueFiles: 
+      - '../clusters/{{ .Values.cluster_name }}/values/nginx-demo-values.yaml'
+        
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: "nginx-demo"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
