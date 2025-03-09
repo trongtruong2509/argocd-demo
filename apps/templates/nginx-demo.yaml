@@ -1,3 +1,4 @@
+{{- if .Values.apps.my-nginx-app }}  # Check if the app is enabled
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:

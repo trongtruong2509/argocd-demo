@@ -1,2 +1,7 @@
 cluster_name: minikube
 # namespace: dev
+
+apps:
+  minio: false
+  my-nginx-app: true
+  
