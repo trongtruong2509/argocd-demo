@@ -9,9 +9,9 @@ spec:
     repoURL: https://github.com/trongtruong2509/argocd-demo.git
     targetRevision: approach_1
     path: "./apps/"  # The folder containing child applications
-  helm:
-    valueFiles:
-      - "../clusters/minikube/cluster-config.yaml"
+    helm:
+      valueFiles:
+        - "../clusters/minikube/cluster-config.yaml"
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
