@@ -11,7 +11,7 @@ spec:
     path: "helm-charts/nginx-demo"
   helm:
     valueFiles: 
-      - '../clusters/{{ .Values.cluster_name }}/values/nginx-demo-values.yaml'
+      - '../../clusters/{{ .Values.cluster_name }}/values/nginx-demo-values.yaml'
         
   destination:
     server: https://kubernetes.default.svc
