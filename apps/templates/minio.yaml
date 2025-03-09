@@ -9,17 +9,9 @@ spec:
     repoURL: https://operator.min.io
     chart: operator
     targetRevision: "7.0.0"  # Check for the latest version on Artifact Hub
-    helm:
+    helm: # overwrite helm values here
       releaseName: minio-operator
-    # helm:
-    #   value: | 
-    #     namespace: minio
-    #     version: "15.0.5"
 
-    #     resources:
-    #       requests:
-    #         memory: "100Mi"
-        
   destination:
     server: https://kubernetes.default.svc  # Deploy to the in-cluster Kubernetes API
     namespace: "{{ .Values.namespace }}"  # MinIO will be installed in this namespace
