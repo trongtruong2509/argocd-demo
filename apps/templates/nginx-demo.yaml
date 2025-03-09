@@ -1,4 +1,4 @@
-{{ if .Values.apps.my-nginx-app | default false }}
+{{ if .Values.apps["my-nginx-app"] | default false }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
