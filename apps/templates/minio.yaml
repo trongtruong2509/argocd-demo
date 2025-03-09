@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: minio
+  name: minio-app
   namespace: argocd  # Change if ArgoCD is installed in a different namespace
 spec:
   project: default
@@ -10,8 +10,13 @@ spec:
     chart: minio
     targetRevision: "{{ .Values.version }}"  # Check for the latest version on Artifact Hub
     helm:
-      valueFiles: 
-        - '../../clusters/{{ .Values.cluster_name }}/values/minio-values.yaml'
+      value: | 
+        namespace: minio
+        version: "15.0.5"
+
+        resources:
+          requests:
+            memory: "100Mi"
         
   destination:
     server: https://kubernetes.default.svc  # Deploy to the in-cluster Kubernetes API
