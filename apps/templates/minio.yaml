@@ -7,8 +7,10 @@ spec:
   project: default
   source:
     repoURL: https://operator.min.io
-    chart: minio/operator
+    chart: operator
     targetRevision: "7.0.0"  # Check for the latest version on Artifact Hub
+    helm:
+      releaseName: minio-operator
     # helm:
     #   value: | 
     #     namespace: minio
