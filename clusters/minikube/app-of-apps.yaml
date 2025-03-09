@@ -12,6 +12,7 @@ spec:
     helm:
       valueFiles:
         - "../clusters/minikube/cluster-config.yaml"
+        - "../clusters/minikube/values/minio-values.yaml"
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd

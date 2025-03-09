@@ -11,8 +11,15 @@ spec:
     targetRevision: approach_1
     path: "helm-charts/nginx-demo"
     helm:
-      valueFiles: 
-        - '../../clusters/{{ .Values.cluster_name }}/values/nginx-demo-values.yaml'
+      values: |
+        replicaCount: {{ .Values.my_nginx_app.replicaCount }}
+        image:
+          repository: {{ .Values.my_nginx_app.image.repository }}
+          tag: {{ .Values.my_nginx_app.image.tag }}
+          pullPolicy: {{ .Values.my_nginx_app.image.pullPolicy }}
+
+        deployment:
+          environment: {{ .Values.my_nginx_app.deployment.environment }}
         
   destination:
     server: https://kubernetes.default.svc
