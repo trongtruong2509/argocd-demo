@@ -1,9 +1,0 @@
-replicaCount: 1
-image:
-  repository: nginx
-  tag: "latest"
-  pullPolicy: Always
-dependency: []
-
-deployment:
-  environment: "development"
