@@ -6,17 +6,17 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://artifacthub.io/packages/helm/bitnami
-    chart: minio
+    repoURL: https://operator.min.io
+    chart: minio/operator
     targetRevision: "15.0.5"  # Check for the latest version on Artifact Hub
-    helm:
-      value: | 
-        namespace: minio
-        version: "15.0.5"
+    # helm:
+    #   value: | 
+    #     namespace: minio
+    #     version: "15.0.5"
 
-        resources:
-          requests:
-            memory: "100Mi"
+    #     resources:
+    #       requests:
+    #         memory: "100Mi"
         
   destination:
     server: https://kubernetes.default.svc  # Deploy to the in-cluster Kubernetes API
